@@ -10,8 +10,21 @@
 
 
 // ------------ task 2 ------------
-async function awaitCall(){
-    let data = await fetch('https://jsonplaceholder.typicode.com/users')
-    console.log(await data.json() );
+// async function awaitCall(){
+//     let data = await fetch('https://jsonplaceholder.typicode.com/users')
+//     console.log(await data.json() );
+// }
+
+// ----------tak 3 ----------
+
+async function awaitCall() {
+    try {
+        let data = await fetch('https://jsonplaceholder.typicode.com/users');
+        console.log(await data.json());
+    } catch (error) {
+        console.log(`error is: ${error}`);
+    }
 }
 awaitCall();
+
+
