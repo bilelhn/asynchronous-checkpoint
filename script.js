@@ -17,14 +17,33 @@
 
 // ----------tak 3 ----------
 
-async function awaitCall() {
-    try {
-        let data = await fetch('https://jsonplaceholder.typicode.com/users');
-        console.log(await data.json());
-    } catch (error) {
-        console.log(`error is: ${error}`);
-    }
+// async function awaitCall() {
+//     try {
+//         let data = await fetch('https://jsonplaceholder.typicode.com/users');
+//         console.log(await data.json());
+//     } catch (error) {
+//         console.log(`error is: ${error}`);
+//     }
+// }
+// awaitCall();
+
+function func1(){
+   return 'message 1';
 }
-awaitCall();
+function func2(){
+    return 'message 2';
+}
+function func3(){
+    return 'message 3';
+}
+async function  chainedAsyncFunction(){
+    let tab=[func1(), func2(), func3()];
+    for(let i=0; i<tab.length;i++)
+    {
 
-
+            setTimeout( async() => {
+               console.log(tab[i]);
+            }, 1000*i);
+  }
+}
+chainedAsyncFunction();
